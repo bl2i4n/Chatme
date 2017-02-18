@@ -1,12 +1,15 @@
 <!DOCTYPE html>
+<!-- style a side bar-->
+<!-- add bracket notation to see rooms -->
 <html>
     <head>
-        <title>Page Title</title>
+        <title>B-chat</title>
     </head>
     <body>
-
-        <h1>This is a Heading</h1>
-        <p>This is a paragraph.</p>
-
+        <div class="chat-rooms" >
+            <div ng-repeat="room in roomsList">
+                <p class="rooms-display">{{ room.$value }}</p>
+            </div>
+        </div>
     </body>
 </html>
