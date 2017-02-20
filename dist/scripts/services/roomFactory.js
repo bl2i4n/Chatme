@@ -8,14 +8,11 @@
             //add create room abstract method
             //call angularFire's $add() with the $firebaseArray service
             //review github article on how this gets done
-            createRoom: createRoom
+            createRoom: function(newRoom){
+                return rooms.$add(newRoom);
+                
+            }
         };
-        
-        //function is hoisted to the top
-        function createRoom(newRoom){
-            return rooms.$add(newRoom)
-        }
-    
     }
         
     angular

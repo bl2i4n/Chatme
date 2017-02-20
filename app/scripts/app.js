@@ -19,6 +19,6 @@
     };
     
     angular
-        .module('blocChat', ['ui.router', 'ui-bootstrap', 'firebase']) // ui.router is for ui0sref for new type of linking
+        .module('blocChat', ['ui.router', 'ui.bootstrap', 'firebase']) // ui.router is for ui0sref for new type of linking
         .config(config);
 })();

@@ -9,6 +9,7 @@
             $uibModal.open({
                 //what do you want the modal to open up
                 //link to html for popup dialog
+                animation: true,
                 templateUrl:'/templates/modal.html',
                 controller: 'CreateRoomCtrl'
             })

@@ -1,11 +1,11 @@
 <form>
     <h3>Create a New ChatRoom</h3>
     <h5>Enter a room name: </h5>
-    <div ng-submit="makeRoom(roomFactory)">
-        <input type ="text" name="input" ng-modal="roomFactory" placeholder="Enter Room Name">
+    <form ng-submit="createRoom(room)">
+        <input type ="text" name="input" ng-model="room" placeholder="Room Name">
         <button>Create Room</button>
-    </div>
-    <div ng-submit="closeRoom()">
-        <button>Cancel</button>
+    </form>
+    <div>
+        <button ng-submit="closeRoom()">Cancel</button>
     </div>
 </form>
