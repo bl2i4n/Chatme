@@ -1,11 +1,8 @@
 <form>
     <h3>Create a New ChatRoom</h3>
     <h5>Enter a room name: </h5>
-    <form ng-submit="createRoom(room)">
-        <input type ="text" name="input" ng-model="room" placeholder="Room Name">
-        <button>Create Room</button>
-    </form>
-    <div>
-        <button ng-submit="closeRoom()">Cancel</button>
-    </div>
+    <input type="text" name="input" ng-model="newRoom.$value" name="text" placeholder="Enter room name">
+    
+    <button type="button" ng-click="create()">Create</button>
+    <button type="button" ng-click="cancel()">Cancel</button>
 </form>
