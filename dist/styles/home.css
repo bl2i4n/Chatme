@@ -18,3 +18,14 @@
    font-family: 'Righteous', cursive;
    padding: 15px;
 }
+
+.currentRoom {
+    padding-top: 15px;
+    width: 100%;
+    position: relative;
+    left: 200px;
+}
+
+.chat-messages {
+    background-color: #A5457A;
+}
