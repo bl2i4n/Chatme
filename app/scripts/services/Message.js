@@ -1,5 +1,5 @@
 (function(){
-    function MessagE($firebaseArray){
+    function Message($firebaseArray){
         var ref = firebase.database().ref().child("messages");
         var messages = $firebaseArray(ref);
         
