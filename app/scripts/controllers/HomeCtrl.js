@@ -1,9 +1,28 @@
 (function(){
     
-    function HomeCtrl($scope, roomFactory, $uibModal){
+    function HomeCtrl($scope, roomFactory, $uibModal, Message){
         $scope.roomsList = roomFactory.all;
+
+        //load without a room selected, used to hold current room
+        this.currentRoom = null;
         
-//        //change scope to another function
+        //states whether room name is shown or not
+        this.currentRoomShowing = false;
+        
+        this.messages = null;
+        
+        
+        //sets the current room to the one clicked
+        this.setCurrentChatRoom = function(clickedRoom){
+//            debugger;
+            this.currentRoom = clickedRoom;
+            this.messages = Message.getByRoomId(this.currentRoom.$id);
+            console.log(this.currentRoom.$id);
+            console.log(this.messages);
+        };
+            
+        
+//        tried using another controller to use uibmodal
 //        $scope.createRoomModal = function(){
 //            //to open a popup window use the $uiModal.open method call
 //            $uibModal.open({
@@ -17,6 +36,7 @@
 //        };
 //    }
         
+        //method for Home Controller to open modal, used Travis Rodger's method
         this.openModal = function(){
             var modalInstance = $uibModal.open({
                 templateUrl: '/templates/modal.html',
@@ -44,6 +64,6 @@
  
     angular
         .module('blocChat')
-        .controller('HomeCtrl', ['$scope', 'roomFactory', '$uibModal', HomeCtrl]);
+        .controller('HomeCtrl', ['$scope', 'roomFactory', '$uibModal', 'Message', HomeCtrl]);
  
  })();

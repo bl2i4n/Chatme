@@ -11,15 +11,23 @@
             <h1>Brian's Shack</h1>
             <button ng-click="home.openModal()"> Create Room </button>
             <div ng-repeat="room in roomsList">
-                <p class="rooms-display">{{ room.$value }}</p>
+                <!--<p class="rooms-display">{{ room.$value }}</p>-->
+                <a href="" class="rooms-display" ng-click="home.setCurrentChatRoom(room); home.currentRoomShowing = true">{{room.$value}}</a>
             </div>
         </div>
     </body>
 </html>
 
-<section class="currentRoom">
-    <div>
-    
-    
+<section class="right-column">
+    <!--top panel header -->
+    <div ng-show="home.currentRoomShowing">
+        <h3>{{ home.currentRoom.$value }}</h3>
+    </div>
+    <!-- message body and chat section  -->
+    <div class="panel-body">
+        <h1 ng-repeat="message in home.messages">
+           {{message.username}}: {{message.content}} 
+           <p>{{message.sentAt}}</p>
+        </h1>
     </div>
 </section>
