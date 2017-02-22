@@ -19,13 +19,20 @@
    padding: 15px;
 }
 
-.currentRoom {
-    padding-top: 15px;
-    width: 100%;
-    position: relative;
-    left: 200px;
+.right-column {
+    padding-top: 70px;
+    background-color: white;
+    box-sizing: content-box;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 25%;
+    right: 0;
+    width: 75%;
+    overflow: hidden;
 }
 
+/*
 .chat-messages {
     background-color: #A5457A;
-}
+}*/

@@ -2,7 +2,7 @@
     
     function HomeCtrl($scope, roomFactory, $uibModal, Message){
         $scope.roomsList = roomFactory.all;
-        
+
         //load without a room selected, used to hold current room
         this.currentRoom = null;
         
@@ -14,8 +14,11 @@
         
         //sets the current room to the one clicked
         this.setCurrentChatRoom = function(clickedRoom){
+//            debugger;
             this.currentRoom = clickedRoom;
             this.messages = Message.getByRoomId(this.currentRoom.$id);
+            console.log(this.currentRoom.$id);
+            console.log(this.messages);
         };
             
         

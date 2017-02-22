@@ -19,13 +19,16 @@
 </html>
 
 
-<section class="currentRoom">
+<section class="right-column">
     <!--top panel header -->
-    <div ng-show="home.currentRoomShowing"><h3>{{ home.currentRoom.$value }}</h3></div>
+    <div ng-show="home.currentRoomShowing">
+        <h3>{{ home.currentRoom.$value }}</h3>
+    </div>
     <!-- message body and chat section  -->
-    <div>
-        <p ng-repeat="message in home.messages">
-        {{message.username}}: {{message.content}}: {{message.sentAt}}
-        </p>
+    <div class="panel-body">
+        <h1 ng-repeat="message in home.messages">
+           {{message.username}}: {{message.content}} 
+           <p>{{message.sentAt}}</p>
+        </h1>
     </div>
 </section>
