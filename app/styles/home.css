@@ -5,22 +5,29 @@
 }
 
 .chat-rooms{
-    position: absolute;
-    float: left;
-    width: 400px;
-    background-color: #A5457A;
-    min-height: 100%;
-    border-radius: 25px;
+  font-family: 'Righteous', cursive;
+  text-align: center;
+  box-sizing:content-box;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  width: 25%;
+  overflow:hidden;
+  background-color: #A5457A;
+  font-size:25px;
 }
 
 .rooms-display{
-   text-align: center; 
+   text-align: center;
    font-family: 'Righteous', cursive;
    padding: 15px;
 }
 
 .right-column {
-    padding-top: 70px;
+    font-family: 'Righteous', cursive;
+    padding-top: 25px;
     background-color: white;
     box-sizing: content-box;
     position: absolute;
@@ -30,9 +37,15 @@
     right: 0;
     width: 75%;
     overflow: hidden;
+    background-color: #fafafa;
 }
 
-/*
-.chat-messages {
-    background-color: #A5457A;
-}*/
+.room-title {
+  background-color: #FB4C81;
+  text-align: center;
+  padding: 12px;
+}
+
+#room-names {
+  font-size: 35px;
+}
