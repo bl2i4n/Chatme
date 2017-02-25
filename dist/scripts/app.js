@@ -6,7 +6,7 @@
                 enabled: true,
                 requireBase: false
         });
-        
+
         $stateProvider
             //depending on which state is chosen below
             //direct the page to that template, or go to that url
@@ -17,8 +17,8 @@
 
             });
     };
-    
+
     angular
-        .module('blocChat', ['ui.router', 'ui.bootstrap', 'firebase']) // ui.router is for ui0sref for new type of linking
+        .module('blocChat', ['ui.router', 'ui.bootstrap', 'firebase', 'ngCookies']) // ui.router is for ui0sref for new type of linking
         .config(config);
 })();

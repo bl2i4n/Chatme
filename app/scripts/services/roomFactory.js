@@ -2,7 +2,7 @@
     function roomFactory($firebaseArray){
         var ref = firebase.database().ref().child("rooms");
         var rooms = $firebaseArray(ref);
-    
+
         return {
             all: rooms,
             //add create room abstract method
@@ -10,13 +10,12 @@
             //review github article on how this gets done
             createRoom: function(newRoom){
                 return rooms.$add(newRoom);
-                
+
             }
         };
     }
-        
+
     angular
         .module('blocChat')
         .factory('roomFactory', ['$firebaseArray', roomFactory]);
 })();
-
