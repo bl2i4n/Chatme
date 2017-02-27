@@ -20,6 +20,7 @@
 </html>
 
 <section class="right-column">
+  <pre>{{home|json}}</pre>
     <!--top panel header -->
     <div class="room-title" ng-show="home.currentRoomShowing">
         <h3>{{ home.currentRoom.$value }}</h3>
@@ -27,8 +28,21 @@
     <!-- message body and chat section  -->
     <div class="panel-body" id="chat-area">
         <h5 ng-repeat="message in home.messages">
+          <table class="table">
            {{message.username}}: {{message.content}}
            <p>{{message.sentAt}}</p>
+         </table>
         </h5>
+        <div>{{home.content}}</div>
     </div>
+
+    <div class="message-area row">
+      <div>
+        <textarea class="send-form" placeholder="Type a message and start chatting!" ng-model="home.content"></textarea>
+      </div>
+      <div>
+        <button type="submit" class="btn-primary send-button" ng-click="home.sendMessage()">Send</button>
+      </div>
+    </div>
+
 </section>

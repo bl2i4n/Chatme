@@ -49,3 +49,33 @@
 #room-names {
   font-size: 35px;
 }
+
+.message-area {
+  width:100%;
+  padding-right: 25px;
+  position: absolute;
+  bottom: 0;
+}
+
+.send-form {
+  display: inline-block;
+  height: 50px;
+  border: 1px solid;
+  width 83%;
+  left: 25%;
+  position: fixed;
+  padding: 0 20px;
+  width:  55%;
+}
+
+.send-button {
+  width: 15%;
+  height: 50px;
+  display: inline-block;
+  bordeR: 2px solid;
+  background-color: ;
+  color:;
+  cursor: pointer;
+  text-align: center;
+  float: right;
+}

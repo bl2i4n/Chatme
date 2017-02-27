@@ -12,7 +12,7 @@
     //         }
     // }
 
-    //attempt number 1
+    //attempt number 2
     //function that will store username when ran in cookies.html
     //   this.setUserName = function() {
     //     $cookies.put('blocChatCurrentUser', this.username) //get the current user at this cookie, and register that user with cookie

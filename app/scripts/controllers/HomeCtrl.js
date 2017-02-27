@@ -1,21 +1,24 @@
 (function(){
 
-    function HomeCtrl($scope, roomFactory, $uibModal, Message){
+    function HomeCtrl($scope, roomFactory, $uibModal, Message, $cookies){
         $scope.roomsList = roomFactory.all;
 
         //load without a room selected, used to hold current room
-        this.currentRoom = null;
+        this.currentRoom = "";
 
         //states whether room name is shown or not
         this.currentRoomShowing = false;
 
-        this.messages = null;
+        //sets messages to null for first run through
+        this.messages = "";
 
+        this.content = "";
 
         //sets the current room to the one clicked
         this.setCurrentChatRoom = function(clickedRoom){
             this.currentRoom = clickedRoom;
             this.messages = Message.getByRoomId(this.currentRoom.$id);
+
             console.log(this.currentRoom.$id);
             console.log(this.messages);
         };
@@ -36,6 +39,7 @@
 //    }
 
         //method for Home Controller to open modal, used Travis Rodger's method
+        //this was moved to a controller
         this.openModal = function(){
             var modalInstance = $uibModal.open({
                 templateUrl: '/templates/modal.html',
@@ -61,8 +65,15 @@
         };
     };
 
+    this.sendMessage = function(){
+      if(this.content){
+        Message.send(this.content, this.currentRoom.$id);
+        this.content = "";
+      }
+    };
+
     angular
         .module('blocChat')
-        .controller('HomeCtrl', ['$scope', 'roomFactory', '$uibModal', 'Message', HomeCtrl]);
+        .controller('HomeCtrl', ['$scope', 'roomFactory', '$uibModal', 'Message', '$cookies', HomeCtrl]);
 
  })();
