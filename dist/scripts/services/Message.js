@@ -29,4 +29,5 @@
         .module('blocChat')
         .factory('Message', ['$firebaseArray', '$cookies', 'roomFactory', Message]);
 
+
 })();
