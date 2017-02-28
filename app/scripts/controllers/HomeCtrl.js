@@ -4,13 +4,13 @@
         $scope.roomsList = roomFactory.all;
 
         //load without a room selected, used to hold current room
-        this.currentRoom = "";
+        this.currentRoom = null;
 
         //states whether room name is shown or not
         this.currentRoomShowing = false;
 
         //sets messages to null for first run through
-        this.messages = "";
+        this.messages = {};
 
         this.content = "";
 
@@ -67,8 +67,8 @@
 
     this.sendMessage = function(){
       if(this.content){
-        Message.send(this.content, this.currentRoom.$id);
-        this.content = "";
+        Message.send($scope.newMessage, this.currentRoom.$id);
+          this.content = "";
       }
     };
 

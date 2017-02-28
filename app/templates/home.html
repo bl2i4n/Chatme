@@ -11,14 +11,14 @@
             <h1>Brian's Shack</h1>
             <button ng-click="home.openModal()"> Create Room </button>
             <br></br>
-            <div id="room-names"ng-repeat="room in roomsList">
+            <div id="room-names" ng-repeat="room in roomsList">
                 <!--<p class="rooms-display">{{ room.$value }}</p>-->
                 <a href="" class="rooms-display" ng-click="home.setCurrentChatRoom(room); home.currentRoomShowing = true">{{room.$value}}</a>
             </div>
         </div>
     </body>
 </html>
-
+<div>
 <section class="right-column">
   <pre>{{home|json}}</pre>
     <!--top panel header -->
@@ -33,7 +33,7 @@
            <p>{{message.sentAt}}</p>
          </table>
         </h5>
-        <div>{{home.content}}</div>
+        <!-- <div>{{home.content}}</div> -->
     </div>
 
     <div class="message-area row">
@@ -41,8 +41,9 @@
         <textarea class="send-form" placeholder="Type a message and start chatting!" ng-model="home.content"></textarea>
       </div>
       <div>
-        <button type="submit" class="btn-primary send-button" ng-click="home.sendMessage()">Send</button>
+        <button type="submit" class="btn-primary send-button" ng-click="home.sendMessage(room)">Send</button>
       </div>
     </div>
 
 </section>
+</div>

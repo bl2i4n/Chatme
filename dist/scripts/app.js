@@ -13,7 +13,7 @@
             .state('home', { // takes us to the landing page
                 url: '/',
                 controller: 'HomeCtrl as home', //sets up alias landing
-                templateUrl: '/templates/home.html'
+                templateUrl: 'templates/home.html'
 
             });
     };
