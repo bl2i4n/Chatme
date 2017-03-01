@@ -33,7 +33,7 @@
            <p>{{message.sentAt}}</p>
          </table>
         </h5>
-        <!-- <div>{{home.content}}</div> -->
+        <div>{{message.messages}}</div>
     </div>
 
     <div class="message-area row">
@@ -41,7 +41,7 @@
         <textarea class="send-form" placeholder="Type a message and start chatting!" ng-model="home.content"></textarea>
       </div>
       <div>
-        <button type="submit" class="btn-primary send-button" ng-click="home.sendMessage(room)">Send</button>
+        <button type="submit" class="btn-primary send-button" ng-click="home.sendMessage(currentRoom)">Send</button>
       </div>
     </div>
 

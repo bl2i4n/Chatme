@@ -10,7 +10,7 @@
             //review github article on how this gets done
             createRoom: function(newRoom){
                 return rooms.$add(newRoom);
-
+                
             }
         };
     }

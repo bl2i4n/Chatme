@@ -65,10 +65,10 @@
         };
     };
 
-    this.sendMessage = function(){
+    this.sendMessage = function(currentRoom){
       if(this.content){
-        Message.send($scope.newMessage, this.currentRoom.$id);
-          this.content = "";
+      Message.send($scope.newMessage, this.currentRoom.$id);
+        this.content = "";
       }
     };
 
