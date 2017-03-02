@@ -3,24 +3,32 @@
     function HomeCtrl($scope, roomFactory, $uibModal, Message, $cookies){
         $scope.roomsList = roomFactory.all;
 
-        //load without a room selected, used to hold current room
-        this.currentRoom = null;
+        // //load without a room selected, used to hold current room
+        // this.currentRoom = null;
+        //
+        // //states whether room name is shown or not
+        // this.currentRoomShowing = false;
+        //
+        // //sets messages to null for first run through
+        // this.messages = {};
+        //
+        // this.content = "";
 
-        //states whether room name is shown or not
-        this.currentRoomShowing = false;
+        $scope.messages = {};
+        $scope.currentRoom = null;
+        $scope.currentUser = $cookies.get('blocChatCurrentUser');
 
-        //sets messages to null for first run through
-        this.messages = {};
-
-        this.content = "";
 
         //sets the current room to the one clicked
-        this.setCurrentChatRoom = function(clickedRoom){
-            this.currentRoom = clickedRoom;
-            this.messages = Message.getByRoomId(this.currentRoom.$id);
+        $scope.setCurrentChatRoom = function(room){
+            // this.currentRoom = clickedRoom;
+            // this.messages = Message.getByRoomId(this.currentRoom.$id);
+            //
+            // console.log(this.currentRoom.$id);
+            // console.log(this.messages);
+            $scope.currentRoom = room;
+            $scope.messages = Message.getByRoomId(room$id);
 
-            console.log(this.currentRoom.$id);
-            console.log(this.messages);
         };
 
 
@@ -40,7 +48,7 @@
 
         //method for Home Controller to open modal, used Travis Rodger's method
         //this was moved to a controller
-        this.openModal = function(){
+        $scope.openModal = function(){
             var modalInstance = $uibModal.open({
                 templateUrl: '/templates/modal.html',
                 //function for modal
@@ -63,15 +71,16 @@
             });
 
         };
-    };
 
-    this.sendMessage = function(currentRoom){
-      if(this.content){
-      Message.send($scope.newMessage, this.currentRoom.$id);
-        this.content = "";
-      }
+    $scope.sendMessage = function(room){
+      // if(this.content){
+      // Message.send($scope.newMessage, this.currentRoom.$id);
+      //   this.content = "";
+      // }
+      Message.send($scope.newMessage, room.$id);
+      $scope.newMessage = null;
     };
-
+  };
     angular
         .module('blocChat')
         .controller('HomeCtrl', ['$scope', 'roomFactory', '$uibModal', 'Message', '$cookies', HomeCtrl]);

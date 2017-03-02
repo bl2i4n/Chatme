@@ -21,6 +21,7 @@
 <div>
 <section class="right-column">
   <pre>{{home|json}}</pre>
+  <pre>{{home.content}}</pre>
     <!--top panel header -->
     <div class="room-title" ng-show="home.currentRoomShowing">
         <h3>{{ home.currentRoom.$value }}</h3>
@@ -33,7 +34,7 @@
            <p>{{message.sentAt}}</p>
          </table>
         </h5>
-        <div>{{message.messages}}</div>
+
     </div>
 
     <div class="message-area row">
@@ -41,7 +42,7 @@
         <textarea class="send-form" placeholder="Type a message and start chatting!" ng-model="home.content"></textarea>
       </div>
       <div>
-        <button type="submit" class="btn-primary send-button" ng-click="home.sendMessage(currentRoom)">Send</button>
+        <button type="submit" class="btn-primary send-button" ng-click="sendMessage(currentRoom)">Send</button>
       </div>
     </div>
 
