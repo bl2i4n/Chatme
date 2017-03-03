@@ -27,7 +27,7 @@
             // console.log(this.currentRoom.$id);
             // console.log(this.messages);
             $scope.currentRoom = room;
-            $scope.messages = Message.getByRoomId(room$id);
+            $scope.messages = Message.getByRoomId(room.$id);
 
         };
 
@@ -77,10 +77,11 @@
       // Message.send($scope.newMessage, this.currentRoom.$id);
       //   this.content = "";
       // }
+      console.log(room.$id);
       Message.send($scope.newMessage, room.$id);
       $scope.newMessage = null;
     };
-  };
+  }
     angular
         .module('blocChat')
         .controller('HomeCtrl', ['$scope', 'roomFactory', '$uibModal', 'Message', '$cookies', HomeCtrl]);
