@@ -9,42 +9,45 @@
     <body>
         <div class="chat-rooms" >
             <h1>Brian's Shack</h1>
-            <button ng-click="home.openModal()"> Create Room </button>
+            <button ng-click="addRoomModal()"> Create Room </button>
             <br></br>
             <div id="room-names" ng-repeat="room in roomsList">
                 <!--<p class="rooms-display">{{ room.$value }}</p>-->
-                <a href="" class="rooms-display" ng-click="home.setCurrentChatRoom(room); home.currentRoomShowing = true">{{room.$value}}</a>
+                <a href="" class="rooms-display" ng-click="setCurrentChatRoom(room)">{{room.$value}}{{room.name}}</a>
             </div>
         </div>
     </body>
-</html>
 <div>
 <section class="right-column">
 <!-- <pre>{{room$Id}}</pre> -->
   <!-- <pre>{{home.content}}</pre> -->
     <!--top panel header -->
-    <div class="room-title" ng-show="home.currentRoomShowing">
-        <h3>{{ home.currentRoom.$value }}</h3>
+    <div class="room-title">
+        <h3>{{currentRoom.$value}}</h3>
+        <h3>{{currentRoom.name}}</h3>
     </div>
     <!-- message body and chat section  -->
     <div class="panel-body" id="chat-area">
-        <h5 ng-repeat="message in home.messages">
+        <h5 class="chat-messages" ng-repeat="message in messages">
           <table class="table">
-           {{message.username}}: {{message.content}}
-           <p>{{message.sentAt}}</p>
+            <span>{{message.username}}: {{message.content}}</span>
+            <br></br>
+           <p class="user-time">{{message.sentAt | date: 'MM\/dd\/y, hh:mm a'}}</p>
          </table>
         </h5>
 
     </div>
 
-    <div class="message-area row">
+    <div class="message-area" scroll-glue="glued">
       <div>
-        <textarea class="send-form" placeholder="Type a message and start chatting!" ng-model="home.content"></textarea>
+        <input class="send-form" placeholder="Type a message and start chatting!" ng-model="newMessage" ng-keypress="($event.charCode==13)? sendMessage(currentRoom) : return"></input>
       </div>
       <div>
         <button type="submit" class="btn-primary send-button" ng-click="sendMessage(currentRoom)">Send</button>
       </div>
     </div>
 
+
 </section>
 </div>
+</html>

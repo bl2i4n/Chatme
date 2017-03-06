@@ -15,7 +15,7 @@
   right:0;
   width: 25%;
   overflow:hidden;
-  background-color: #A5457A;
+  background-color: #EFA6F2;
   font-size:25px;
 }
 
@@ -36,7 +36,7 @@
     left: 25%;
     right: 0;
     width: 75%;
-    overflow: hidden;
+    overflow: auto;
     background-color: #fafafa;
 }
 
@@ -50,6 +50,17 @@
   font-size: 35px;
 }
 
+.chat-messages {
+  padding-top: 8px;
+  background-color: #FFD4F2;
+  border-radius: 8px;
+  position:relative;
+}
+.user-time {
+  color: darkgray;
+  font-size: 12px;
+}
+
 .message-area {
   width:100%;
   padding-right: 25px;
@@ -59,7 +70,7 @@
 
 .send-form {
   display: inline-block;
-  height: 50px;
+  height: 45px;
   border: 1px solid;
   width 83%;
   left: 25%;
@@ -72,8 +83,7 @@
   width: 15%;
   height: 50px;
   display: inline-block;
-  bordeR: 2px solid;
-  background-color: ;
+  border: 2px solid;
   color:;
   cursor: pointer;
   text-align: center;
