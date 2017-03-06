@@ -1,8 +1,10 @@
 (function (){
   function CreateRoomCtrl($scope, roomFactory, $uibModalInstance){
+    //function to accept a room name entered by the user
     $scope.createRoom = function(name){
       if(name !== undefined){
         roomFactory.makeRoom({
+          //create room by name and save the date of the room
           name: name,
           date: new Date()
         });

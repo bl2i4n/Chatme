@@ -12,7 +12,6 @@
             <button ng-click="addRoomModal()"> Create Room </button>
             <br></br>
             <div id="room-names" ng-repeat="room in roomsList">
-                <!--<p class="rooms-display">{{ room.$value }}</p>-->
                 <a href="" class="rooms-display" ng-click="setCurrentChatRoom(room)">{{room.$value}}{{room.name}}</a>
             </div>
         </div>
@@ -40,9 +39,11 @@
 
     <div class="message-area" scroll-glue="glued">
       <div>
+        <!--  Input for messages; takes a new message and also takes in the character code enter to be accepted for a click event-->
         <input class="send-form" placeholder="Type a message and start chatting!" ng-model="newMessage" ng-keypress="($event.charCode==13)? sendMessage(currentRoom) : return"></input>
       </div>
       <div>
+        <!-- Send the message to the current room based on the room Id -->
         <button type="submit" class="btn-primary send-button" ng-click="sendMessage(currentRoom)">Send</button>
       </div>
     </div>

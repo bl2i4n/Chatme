@@ -22,14 +22,13 @@
     // };
 
     //lisajmin's style
+    //logic to check if username entered from the cookies.html
     this.setUserName = function() {
       if (this.username !== undefined){
-        $cookies.put('blocChatCurrentUser', this.username);
+        $cookies.put('blocChatCurrentUser', this.username); //save username in a cookie and as the blocChatCurrentUser
         $uibModalInstance.close();
-        console.log(this.username);
       } else {
         alert("Please enter a valid username");
-        console.log(this.username);
         }
       }
 
