@@ -17,7 +17,7 @@
         $scope.addRoomModal = function(){
           $uibModal.open({
             animation:true,
-            templateUrl: '/templates/modal.h\tml',
+            templateUrl: '/templates/modal.html',
             controller: 'CreateRoomCtrl'
           })
         };
