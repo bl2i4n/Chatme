@@ -17,7 +17,7 @@
         </div>
     </body>
 <div>
-<section class="right-column">
+<section class="right-column" scroll-glue>
 <!-- <pre>{{room$Id}}</pre> -->
   <!-- <pre>{{home.content}}</pre> -->
     <!--top panel header -->
@@ -36,8 +36,9 @@
         </h5>
 
     </div>
-
-    <div class="message-area" scroll-glue="glued">
+</section>
+<section>
+    <div class="message-area">
       <div>
         <!--  Input for messages; takes a new message and also takes in the character code enter to be accepted for a click event-->
         <input class="send-form" placeholder="Type a message and start chatting!" ng-model="newMessage" ng-keypress="($event.charCode==13)? sendMessage(currentRoom) : return"></input>
@@ -47,8 +48,6 @@
         <button type="submit" class="btn-primary send-button" ng-click="sendMessage(currentRoom)">Send</button>
       </div>
     </div>
-
-
 </section>
 </div>
 </html>
