@@ -1,0 +1,4 @@
+<div ng-init="cookie.debugable=true">
+  <pre ng-if="cookie.debug">{{ cookie | json }}</pre>
+  <button ng-if="cookie.debugable" ng-click="cookie.debug = !cookie.debug">Toggle Debug</button>
+</div>

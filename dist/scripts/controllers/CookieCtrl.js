@@ -1,6 +1,9 @@
 (function(){
     function CookieCtrl($scope, $uibModalInstance, $cookies){
-
+      this.debugable = false;
+      //move hardcoded variables to the top just in case you need to configure them later
+      //pitfalls of hardcoded values
+      var COOKIE_USERNAME = 'blocChatCurrentUser';
     //attempt at writing username myself
     //         $scope.createUser = function($scope, $uibModalInstance){
     //           $scope.newUser = {$value}; // value to hold new user
@@ -23,9 +26,11 @@
 
     //lisajmin's style
     //logic to check if username entered from the cookies.html
-    this.setUserName = function() {
-      if (this.username !== undefined){
-        $cookies.put('blocChatCurrentUser', this.username); //save username in a cookie and as the blocChatCurrentUser
+    this.setUserName = function(username) {
+      console.log(username);
+      username = username.trim(); // Remove leading and trailing whitespace.
+      if (username){
+        $cookies.put(COOKIE_USERNAME, username); //save username in a cookie and as the blocChatCurrentUser
         $uibModalInstance.close();
       } else {
         alert("Please enter a valid username");
