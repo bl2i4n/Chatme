@@ -1,4 +1,5 @@
 ## Brian's Bloc Chat
+![alt tag](https://github.com/bl2i4n/brians-bloc-chat/blob/master/app/assets/images/bloc_chat.png)
 
 A real-time chat application configured with firebase and Angular
 
