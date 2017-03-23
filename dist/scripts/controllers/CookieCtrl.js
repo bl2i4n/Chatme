@@ -33,6 +33,7 @@
         $cookies.put(COOKIE_USERNAME, username); //save username in a cookie and as the blocChatCurrentUser
         $uibModalInstance.close();
       } else {
+        //use modal for consistency
         alert("Please enter a valid username");
         }
       }
